@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: devops-dashboard
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: devops-dashboard
+
+  template:
+    metadata:
+      labels:
+        app: devops-dashboard
+
+    spec:
+      containers:
+      - name: dashboard-container
+        image: arpitsharma01/devops-dashboard
+        ports:
+        - containerPort: 3000
