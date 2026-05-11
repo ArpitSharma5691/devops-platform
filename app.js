@@ -110,25 +110,25 @@ font-weight:bold;
 
 <div class="card">
 <h3>Running Pods</h3>
-<h2>4</h2>
+<h2 id="pods">4</h2>
 <p>Healthy</p>
 </div>
 
 <div class="card">
 <h3>CPU Usage</h3>
-<h2>42%</h2>
+<h2 id="cpu">42%</h2>
 <p>Normal</p>
 </div>
 
 <div class="card">
 <h3>Memory Usage</h3>
-<h2>68%</h2>
+<h2 id="memory">68%</h2>
 <p>Stable</p>
 </div>
 
 <div class="card">
 <h3>Containers</h3>
-<h2>6</h2>
+<h2 id="containers">6</h2>
 <p>Running</p>
 </div>
 
@@ -188,6 +188,26 @@ font-weight:bold;
 </div>
 
 </div>
+
+<script>
+
+setInterval(() => {
+
+document.getElementById("cpu").innerText =
+Math.floor(Math.random() * 40 + 40) + "%";
+
+document.getElementById("memory").innerText =
+Math.floor(Math.random() * 30 + 50) + "%";
+
+document.getElementById("pods").innerText =
+Math.floor(Math.random() * 3 + 4);
+
+document.getElementById("containers").innerText =
+Math.floor(Math.random() * 4 + 5);
+
+}, 3000);
+
+</script>
 
 </body>
 
